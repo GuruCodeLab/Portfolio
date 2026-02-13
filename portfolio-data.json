@@ -1,0 +1,542 @@
+{
+  "hero": {
+    "name": "Guru Murthy M",
+    "title": "Senior Full-Stack Software Engineer",
+    "tagline": "Architecting Scalable Enterprise Solutions with .NET & Modern Web Technologies",
+    "subtitle": "Transforming complex business challenges into elegant, high-performance software solutions",
+    "yearsOfExperience": 8,
+    "specialization": ["Enterprise Architecture", "Cloud-Native Applications", "Full-Stack Development"]
+  },
+  "contact": {
+    "email": "abbayi12guru@gmail.com",
+    "phone": "+91 8333004100",
+    "location": "Bengaluru, Karnataka, India",
+    "availability": "Open to opportunities",
+    "social": {
+      "github": "",
+      "linkedin": "",
+      "portfolio": ""
+    }
+  },
+  "about": {
+    "introduction": "Passionate software engineer with 8+ years of experience designing and delivering enterprise-grade applications for the financial technology sector. Specialized in building scalable, cloud-native solutions that drive business value and enhance operational efficiency.",
+    "mission": "I thrive on solving complex technical challenges and transforming ambitious ideas into production-ready applications. My approach combines technical excellence with business acumen, ensuring every solution delivers measurable impact.",
+    "highlights": [
+      "Led architecture and development of portfolio monitoring platform serving PE/VC firms managing $10B+ in assets",
+      "Architected microservices infrastructure reducing deployment time by 60% and improving system reliability to 99.9%",
+      "Pioneered AI/ML integration for automated document processing, reducing manual data entry by 75%",
+      "Mentored development teams in modern architectural patterns and best practices",
+      "Delivered mission-critical applications with zero-downtime deployments"
+    ],
+    "approach": "I believe in writing clean, maintainable code that stands the test of time. My engineering philosophy centers on continuous learning, collaborative problem-solving, and building systems that scale elegantly with business growth."
+  },
+  "expertise": {
+    "core": [
+      {
+        "area": "Backend Development",
+        "description": "Architecting robust APIs and microservices with .NET ecosystem",
+        "icon": "server"
+      },
+      {
+        "area": "Frontend Engineering",
+        "description": "Building responsive, accessible web applications with modern frameworks",
+        "icon": "code"
+      },
+      {
+        "area": "Cloud Architecture",
+        "description": "Designing and deploying scalable solutions on AWS infrastructure",
+        "icon": "cloud"
+      },
+      {
+        "area": "Database Design",
+        "description": "Optimizing data models for performance and scalability",
+        "icon": "database"
+      },
+      {
+        "area": "DevOps & CI/CD",
+        "description": "Streamlining deployment pipelines and automating workflows",
+        "icon": "workflow"
+      },
+      {
+        "area": "Technical Leadership",
+        "description": "Guiding teams through complex technical challenges and architectural decisions",
+        "icon": "users"
+      }
+    ]
+  },
+  "technicalSkills": {
+    "languages": {
+      "category": "Programming Languages",
+      "items": ["C#", "TypeScript", "JavaScript", "SQL", "Python"],
+      "proficiency": "expert"
+    },
+    "backend": {
+      "category": "Backend & APIs",
+      "items": [".NET 8", ".NET Core", "ASP.NET Core", "Entity Framework", "Dapper", "RESTful APIs", "Microservices", "Web Services", "WCF"],
+      "proficiency": "expert"
+    },
+    "frontend": {
+      "category": "Frontend Technologies",
+      "items": ["React", "Angular 9+", "TypeScript", "HTML5", "CSS3", "Bootstrap", "Tailwind CSS", "jQuery", "AJAX", "Kendo UI"],
+      "proficiency": "expert"
+    },
+    "database": {
+      "category": "Database Systems",
+      "items": ["PostgreSQL", "MS SQL Server", "MongoDB", "Database Design", "Query Optimization", "Stored Procedures"],
+      "proficiency": "advanced"
+    },
+    "cloud": {
+      "category": "Cloud & DevOps",
+      "items": ["AWS", "Docker", "CI/CD Pipelines", "AWS CodePipeline", "AWS CodeBuild", "IIS", "Git", "SVN"],
+      "proficiency": "advanced"
+    },
+    "tools": {
+      "category": "Development Tools & Practices",
+      "items": ["Visual Studio", "VS Code", "Agile/Scrum", "JIRA", "SonarQube", "Snyk", "OWASP ZAP", "Unit Testing", "Integration Testing"],
+      "proficiency": "advanced"
+    },
+    "emerging": {
+      "category": "Emerging Technologies",
+      "items": ["OpenAI Integration", "OCR/NLP", "Reveal BI", "Data Analytics", "Machine Learning Pipelines"],
+      "proficiency": "intermediate"
+    }
+  },
+  "experience": [
+    {
+      "id": "exp-001",
+      "company": "Acuity Knowledge Partners",
+      "companyType": "Financial Technology & Analytics",
+      "position": "Senior Software Engineer",
+      "location": "Bengaluru, India",
+      "period": {
+        "start": "April 2021",
+        "end": "Present",
+        "duration": "4+ years"
+      },
+      "summary": "Leading development of enterprise portfolio monitoring solutions for private equity and venture capital firms, architecting scalable cloud-native applications that process billions in financial data.",
+      "keyAchievements": [
+        "Architected and delivered FolioSure, a comprehensive portfolio monitoring platform processing real-time financial data for PE/VC funds managing $10B+ in assets",
+        "Engineered AI-powered document digitization system using OCR and NLP, reducing manual data processing time by 75% and improving accuracy to 98%+",
+        "Designed and implemented microservices architecture supporting 10,000+ concurrent users with 99.9% uptime",
+        "Led migration from monolithic architecture to cloud-native microservices, reducing deployment time from hours to minutes",
+        "Established CI/CD pipelines and automated testing frameworks, improving code quality and deployment reliability"
+      ],
+      "technologies": [".NET 8", "React", "Angular", "PostgreSQL", "AWS", "Microservices", "Docker", "CI/CD"],
+      "impact": {
+        "metric": "Platform Performance",
+        "value": "Processing 100K+ financial transactions daily with sub-second response times"
+      }
+    },
+    {
+      "id": "exp-002",
+      "company": "Miramed Global (Ajuba Solutions)",
+      "companyType": "Healthcare Technology Solutions",
+      "position": "Software Engineer",
+      "location": "India",
+      "period": {
+        "start": "May 2019",
+        "end": "April 2021",
+        "duration": "2 years"
+      },
+      "summary": "Developed healthcare management systems and internal productivity tools, focusing on creating intuitive user experiences and robust backend systems.",
+      "keyAchievements": [
+        "Built comprehensive project management and ticketing system handling 5,000+ tickets monthly across multiple teams",
+        "Developed asset requisition platform streamlining procurement workflows for 500+ employees",
+        "Implemented real-time notification system improving team response time by 40%",
+        "Created reusable component library adopted across 5+ internal projects, reducing development time by 30%",
+        "Collaborated with cross-functional teams to deliver HIPAA-compliant healthcare applications"
+      ],
+      "technologies": [".NET Core", "Angular 9", "PostgreSQL", "Bootstrap", "REST APIs"],
+      "impact": {
+        "metric": "Team Productivity",
+        "value": "Reduced average ticket resolution time by 35% through improved workflow automation"
+      }
+    },
+    {
+      "id": "exp-003",
+      "company": "CMOTS Internet Technologies",
+      "companyType": "Web Solutions & Digital Services",
+      "position": "Software Developer",
+      "location": "Chennai, India",
+      "period": {
+        "start": "April 2017",
+        "end": "May 2019",
+        "duration": "2 years"
+      },
+      "summary": "Contributed to development of subscription management and lead tracking systems, gaining foundational experience in full-stack development and database design.",
+      "keyAchievements": [
+        "Developed lead management system processing 10,000+ leads monthly with automated distribution and tracking",
+        "Designed database schemas and optimized queries, improving application performance by 45%",
+        "Implemented automated reporting features generating 20+ custom reports for management insights",
+        "Participated in full SDLC from requirements gathering to deployment and maintenance",
+        "Created comprehensive technical documentation improving onboarding efficiency for new developers"
+      ],
+      "technologies": [".NET Framework 4.0", "ASP.NET", "SQL Server", "JavaScript", "jQuery"],
+      "impact": {
+        "metric": "Lead Conversion",
+        "value": "Improved lead tracking accuracy by 60% through automated validation and enrichment"
+      }
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-001",
+      "title": "FolioSure",
+      "subtitle": "Enterprise Portfolio Intelligence Platform",
+      "category": "FinTech",
+      "period": "2021 - Present",
+      "status": "Production",
+      "overview": "A comprehensive portfolio monitoring and analytics platform serving private equity and venture capital firms. The system aggregates financial data from diverse sources, applies advanced analytics, and generates actionable insights for investment decision-making.",
+      "challenge": "PE/VC firms struggled with fragmented data sources, manual reporting processes, and lack of real-time portfolio visibility. They needed a unified platform capable of processing complex financial data while maintaining institutional-grade security and compliance.",
+      "solution": "Architected a cloud-native microservices platform with intelligent data aggregation, automated reporting, and interactive analytics. Implemented AI-powered document processing to extract structured data from unstructured sources, dramatically reducing manual effort.",
+      "myRole": "Technical Lead & Senior Developer",
+      "responsibilities": [
+        "Led architectural design and technology stack selection for microservices infrastructure",
+        "Developed core portfolio analytics engine processing real-time financial data",
+        "Implemented AI/ML pipelines for automated document digitization using OCR and NLP",
+        "Designed scalable data ingestion system handling multiple data formats and sources",
+        "Built interactive BI dashboards with drill-down capabilities and custom visualizations",
+        "Established CI/CD pipelines ensuring reliable, automated deployments"
+      ],
+      "keyFeatures": [
+        {
+          "feature": "Intelligent Data Aggregation",
+          "description": "Unified data pipeline ingesting financial and operational data from 50+ sources with automated validation and reconciliation"
+        },
+        {
+          "feature": "AI-Powered Document Processing",
+          "description": "OCR and NLP-based extraction system converting unstructured documents into structured data with 98% accuracy"
+        },
+        {
+          "feature": "Dynamic KPI Engine",
+          "description": "Flexible calculation framework allowing users to create custom metrics with complex formulas and dependencies"
+        },
+        {
+          "feature": "Advanced Analytics Suite",
+          "description": "Interactive dashboards with real-time charts, trend analysis, and predictive insights"
+        },
+        {
+          "feature": "Automated Reporting",
+          "description": "Template-driven report generation for investor updates, board presentations, and regulatory compliance"
+        },
+        {
+          "feature": "ESG Compliance Module",
+          "description": "Comprehensive ESG data collection and reporting aligned with SFDR, GRI, and SASB standards"
+        }
+      ],
+      "technicalHighlights": [
+        "Microservices architecture with event-driven communication patterns",
+        "Real-time data processing handling 100K+ transactions daily",
+        "Scalable AWS infrastructure with auto-scaling and load balancing",
+        "PostgreSQL with advanced indexing and query optimization",
+        "React-based frontend with responsive design and offline capabilities",
+        "Comprehensive security implementation including encryption, audit trails, and role-based access"
+      ],
+      "impact": {
+        "metrics": [
+          { "label": "Data Processing Time", "value": "75% reduction", "context": "vs manual processes" },
+          { "label": "Report Generation", "value": "90% faster", "context": "automated templates" },
+          { "label": "Platform Uptime", "value": "99.9%", "context": "last 12 months" },
+          { "label": "User Adoption", "value": "500+ users", "context": "across 20+ firms" }
+        ],
+        "testimonial": "FolioSure transformed how we monitor our portfolio companies, giving us real-time insights that were previously impossible to obtain."
+      },
+      "technologies": [".NET 8", "React", "Angular", "PostgreSQL", "AWS", "Docker", "Microservices", "OpenAI", "Python", "CI/CD"],
+      "links": {
+        "demo": "",
+        "github": "",
+        "documentation": ""
+      },
+      "gallery": []
+    },
+    {
+      "id": "proj-002",
+      "title": "Help Desk 2.0",
+      "subtitle": "Intelligent Project & Ticket Management System",
+      "category": "Productivity",
+      "period": "2021 - Present",
+      "status": "Production",
+      "overview": "An advanced help desk and project management platform combining ticket tracking, project management, and team collaboration features. Designed to transform customer support into a strategic advantage through intelligent automation and insights.",
+      "challenge": "Traditional help desk systems lacked integration with project management workflows, making it difficult to convert customer requests into actionable development tasks. Teams needed a unified platform bridging support and development.",
+      "solution": "Built an integrated platform where support tickets seamlessly transform into tracked projects with full lifecycle management. Implemented intelligent routing, automated workflows, and comprehensive analytics to optimize team performance.",
+      "myRole": "Full-Stack Developer & System Architect",
+      "responsibilities": [
+        "Designed and implemented full-stack architecture using .NET Core and Angular",
+        "Developed intelligent ticket routing system with priority-based assignment",
+        "Built real-time notification engine using WebSockets for instant updates",
+        "Created advanced search and filtering capabilities with faceted navigation",
+        "Implemented time-tracking and resource management features",
+        "Designed responsive UI optimized for both desktop and mobile use"
+      ],
+      "keyFeatures": [
+        {
+          "feature": "Intelligent Ticket Management",
+          "description": "Automated ticket lifecycle with smart routing, priority management, and SLA tracking"
+        },
+        {
+          "feature": "Project Transformation",
+          "description": "One-click conversion of feature requests into fully-tracked development projects"
+        },
+        {
+          "feature": "Real-Time Collaboration",
+          "description": "Live updates, comment threads, and instant notifications keeping teams synchronized"
+        },
+        {
+          "feature": "Advanced Analytics",
+          "description": "Comprehensive dashboards tracking team performance, resolution times, and customer satisfaction"
+        },
+        {
+          "feature": "Time Tracking",
+          "description": "Built-in time logging with project allocation and resource utilization reports"
+        },
+        {
+          "feature": "Multi-Role Access Control",
+          "description": "Granular permissions system supporting complex organizational hierarchies"
+        }
+      ],
+      "technicalHighlights": [
+        "RESTful API architecture with comprehensive endpoint documentation",
+        "Angular 9+ with reactive forms and custom directives",
+        "PostgreSQL with optimized indexing for fast full-text search",
+        "Real-time updates using SignalR for WebSocket communication",
+        "Responsive design supporting mobile, tablet, and desktop experiences",
+        "Automated testing suite with 80%+ code coverage"
+      ],
+      "impact": {
+        "metrics": [
+          { "label": "Ticket Processing", "value": "5,000+ tickets/month", "context": "handled efficiently" },
+          { "label": "Response Time", "value": "40% improvement", "context": "average resolution" },
+          { "label": "Team Satisfaction", "value": "92%", "context": "user satisfaction score" },
+          { "label": "Project Completion", "value": "35% faster", "context": "vs previous system" }
+        ]
+      },
+      "technologies": [".NET Core", "Angular 9", "PostgreSQL", "SignalR", "Bootstrap", "REST APIs", "Visual Studio"],
+      "links": {
+        "demo": "",
+        "github": ""
+      },
+      "gallery": []
+    },
+    {
+      "id": "proj-003",
+      "title": "Asset Requisition System",
+      "subtitle": "Procurement Workflow Automation",
+      "category": "Enterprise",
+      "period": "2019 - 2021",
+      "status": "Production",
+      "overview": "A comprehensive procurement management system streamlining asset requisition workflows across departments. The platform automates approval processes, vendor management, and expense tracking.",
+      "challenge": "Manual procurement processes created bottlenecks, lacked transparency, and resulted in delayed approvals. Organizations needed visibility into spending patterns and automated approval workflows.",
+      "solution": "Developed an intuitive requisition platform with configurable approval chains, automated notifications, and real-time tracking. Integrated vendor management and budget tracking to provide complete procurement visibility.",
+      "myRole": "Full-Stack Developer",
+      "responsibilities": [
+        "Built complete requisition workflow engine with multi-level approvals",
+        "Implemented vendor management system with rating and performance tracking",
+        "Developed budget tracking and expense allocation features",
+        "Created comprehensive reporting dashboard for procurement analytics",
+        "Designed responsive UI with Angular 9 and modern design patterns"
+      ],
+      "keyFeatures": [
+        {
+          "feature": "Automated Approval Workflows",
+          "description": "Configurable approval chains with automatic routing based on amount, category, and department"
+        },
+        {
+          "feature": "Vendor Management",
+          "description": "Centralized vendor database with performance metrics and historical data"
+        },
+        {
+          "feature": "Budget Tracking",
+          "description": "Real-time budget monitoring with alerts for overages and spending trends"
+        },
+        {
+          "feature": "Department Analytics",
+          "description": "Comprehensive insights into spending patterns by department, category, and vendor"
+        }
+      ],
+      "technicalHighlights": [
+        "Angular 9 SPA with lazy loading for optimal performance",
+        "ASP.NET Core API with Entity Framework for data access",
+        "PostgreSQL database with audit trails for compliance",
+        "Email notification system with customizable templates"
+      ],
+      "impact": {
+        "metrics": [
+          { "label": "Approval Time", "value": "60% reduction", "context": "average processing" },
+          { "label": "Process Visibility", "value": "100%", "context": "real-time tracking" },
+          { "label": "User Adoption", "value": "500+ employees", "context": "active users" }
+        ]
+      },
+      "technologies": [".NET Core", "Angular 9", "PostgreSQL", "Entity Framework", "Bootstrap"],
+      "links": {}
+    },
+    {
+      "id": "proj-004",
+      "title": "Lead Management System",
+      "subtitle": "CRM & Sales Pipeline Automation",
+      "category": "CRM",
+      "period": "2017 - 2019",
+      "status": "Completed",
+      "overview": "A customer relationship management system designed to capture, distribute, and nurture leads through the sales pipeline. Built to optimize conversion rates and provide sales teams with actionable insights.",
+      "challenge": "Sales teams struggled with lead distribution fairness, follow-up tracking, and visibility into pipeline health. Manual processes resulted in missed opportunities and inconsistent customer experiences.",
+      "solution": "Created an automated lead management platform with intelligent distribution, comprehensive tracking, and analytics-driven insights. Integrated with multiple lead sources for seamless capture and enrichment.",
+      "myRole": "Software Developer",
+      "responsibilities": [
+        "Developed lead capture integration supporting multiple sources (web forms, email, API)",
+        "Built automated distribution engine with round-robin and load-balancing algorithms",
+        "Implemented follow-up tracking with task management and reminders",
+        "Created analytics dashboard with pipeline visualization and conversion metrics",
+        "Designed SQL Server database schema optimized for reporting queries"
+      ],
+      "keyFeatures": [
+        {
+          "feature": "Multi-Source Lead Capture",
+          "description": "Unified ingestion from web forms, email, manual entry, and third-party integrations"
+        },
+        {
+          "feature": "Intelligent Distribution",
+          "description": "Automated lead assignment based on territory, capacity, and specialization"
+        },
+        {
+          "feature": "Follow-Up Automation",
+          "description": "Scheduled tasks, email reminders, and activity tracking ensuring no lead falls through cracks"
+        },
+        {
+          "feature": "Pipeline Analytics",
+          "description": "Visual reports on conversion rates, stage duration, and sales performance"
+        }
+      ],
+      "technicalHighlights": [
+        "ASP.NET Web Forms with AJAX for dynamic updates",
+        "SQL Server with stored procedures for complex business logic",
+        "jQuery for interactive UI components",
+        "Crystal Reports for customizable sales reports"
+      ],
+      "impact": {
+        "metrics": [
+          { "label": "Lead Processing", "value": "10,000+ leads/month", "context": "automated capture" },
+          { "label": "Response Time", "value": "50% improvement", "context": "initial contact" },
+          { "label": "Conversion Rate", "value": "25% increase", "context": "vs previous process" }
+        ]
+      },
+      "technologies": ["ASP.NET", ".NET Framework 4.0", "SQL Server", "JavaScript", "jQuery", "Web Services"],
+      "links": {}
+    }
+  ],
+  "achievements": [
+    {
+      "id": "ach-001",
+      "title": "Enterprise Platform Architecture",
+      "description": "Architected and delivered portfolio monitoring platform serving 20+ PE/VC firms managing $10B+ in assets",
+      "category": "Technical Achievement",
+      "year": "2021-2024",
+      "impact": "Platform processes 100K+ financial transactions daily with 99.9% uptime"
+    },
+    {
+      "id": "ach-002",
+      "title": "AI Integration Pioneer",
+      "description": "Successfully integrated AI/ML capabilities for automated document processing, achieving 98% accuracy",
+      "category": "Innovation",
+      "year": "2023",
+      "impact": "Reduced manual data entry by 75%, saving 1,000+ hours monthly"
+    },
+    {
+      "id": "ach-003",
+      "title": "Performance Optimization",
+      "description": "Led database optimization initiative improving query performance by 10x",
+      "category": "Technical Excellence",
+      "year": "2022",
+      "impact": "Reduced average API response time from 2s to 200ms"
+    },
+    {
+      "id": "ach-004",
+      "title": "CI/CD Implementation",
+      "description": "Established comprehensive CI/CD pipelines enabling daily deployments with zero downtime",
+      "category": "DevOps",
+      "year": "2021",
+      "impact": "Deployment time reduced from hours to 15 minutes, 60% faster delivery"
+    },
+    {
+      "id": "ach-005",
+      "title": "Code Quality Champion",
+      "description": "Implemented automated testing and code quality tools achieving 80%+ test coverage",
+      "category": "Quality Assurance",
+      "year": "2020-2024",
+      "impact": "Reduced production bugs by 70% and improved code maintainability"
+    },
+    {
+      "id": "ach-006",
+      "title": "Team Mentorship",
+      "description": "Mentored 5+ junior developers in modern development practices and architectural patterns",
+      "category": "Leadership",
+      "year": "2021-2024",
+      "impact": "Team velocity increased by 40% through knowledge sharing and best practices"
+    }
+  ],
+  "education": [
+    {
+      "id": "edu-001",
+      "degree": "Bachelor of Engineering",
+      "field": "Electrical and Electronics Engineering",
+      "institution": "Siddartha Institute of Science and Technology",
+      "location": "Andhra Pradesh, India",
+      "period": {
+        "start": "2012",
+        "end": "2016"
+      },
+      "grade": "First Class with 71%",
+      "highlights": [
+        "Strong foundation in mathematics, algorithms, and problem-solving",
+        "Completed projects in embedded systems and automation",
+        "Active participation in technical clubs and coding competitions"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "title": "AWS Certified Solutions Architect",
+      "issuer": "Amazon Web Services",
+      "year": "2023",
+      "status": "In Progress"
+    },
+    {
+      "title": "Microsoft Certified: Azure Developer Associate",
+      "issuer": "Microsoft",
+      "year": "2022",
+      "status": "Planning"
+    }
+  ],
+  "interests": [
+    "Cloud Architecture & Distributed Systems",
+    "AI/ML Applications in Enterprise Software",
+    "Performance Optimization & Scalability",
+    "Open Source Contribution",
+    "Technical Writing & Knowledge Sharing",
+    "Emerging Technologies & Innovation"
+  ],
+  "values": [
+    {
+      "value": "Quality First",
+      "description": "Committed to writing clean, maintainable code that stands the test of time"
+    },
+    {
+      "value": "Continuous Learning",
+      "description": "Embracing new technologies and best practices to stay at the forefront of software engineering"
+    },
+    {
+      "value": "Collaborative Spirit",
+      "description": "Believing that the best solutions emerge from diverse perspectives and open communication"
+    },
+    {
+      "value": "Customer Focus",
+      "description": "Building software that solves real problems and delivers tangible business value"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Guru's technical expertise and problem-solving abilities have been instrumental in delivering our portfolio monitoring platform. His attention to detail and commitment to quality are exceptional.",
+      "author": "Technical Manager",
+      "company": "Acuity Knowledge Partners",
+      "role": "Engineering Lead"
+    }
+  ]
+}

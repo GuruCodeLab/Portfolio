@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guru Murthy M | Senior Full-Stack Engineer</title>
+    
+    <!-- React and ReactDOM -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Color Palette - Sophisticated Dark Theme */
+            --color-primary: #2D3047;
+            --color-secondary: #419D78;
+            --color-accent: #E0A458;
+            --color-highlight: #FFDAB9;
+            --color-dark: #1A1B26;
+            --color-light: #F8F9FA;
+            --color-muted: #8B8B8B;
+            
+            /* Typography */
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Work Sans', sans-serif;
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 6rem;
+            
+            /* Effects */
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            color: var(--color-light);
+            background: var(--color-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        /* Background Pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(65, 157, 120, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(224, 164, 88, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--color-light);
+        }
+        
+        h1 { font-size: clamp(2.5rem, 8vw, 5rem); }
+        h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
+        h4 { font-size: clamp(1.25rem, 2vw, 1.75rem); }
+        
+        p {
+            font-size: 1.125rem;
+            color: rgba(248, 249, 250, 0.9);
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .wide-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(26, 27, 38, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-sm) 0;
+        }
+        
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: var(--spacing-md);
+            list-style: none;
+        }
+        
+        .nav-link {
+            color: var(--color-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: calc(var(--spacing-xl) + 60px) 0 var(--spacing-xl);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-label {
+            display: inline-block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-secondary);
+            margin-bottom: var(--spacing-sm);
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+        
+        .hero-title {
+            margin-bottom: var(--spacing-sm);
+            background: linear-gradient(135deg, var(--color-light) 0%, var(--color-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            color: var(--color-secondary);
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+        
+        .hero-description {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin-bottom: var(--spacing-lg);
+            color: rgba(248, 249, 250, 0.8);
+            animation: fadeInUp 0.8s ease 0.8s both;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: var(--spacing-sm);
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 1s both;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font-body);
+        }
+        
+        .btn-primary {
+            background: var(--color-accent);
+            color: var(--color-dark);
+        }
+        
+        .btn-primary:hover {
+            background: var(--color-highlight);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(224, 164, 88, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-light);
+            border: 2px solid rgba(248, 249, 250, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--color-accent);
+            background: rgba(224, 164, 88, 0.1);
+        }
+        
+        /* Section */
+        .section {
+            padding: var(--spacing-xl) 0;
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .section-label {
+            display: inline-block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-secondary);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .section-title {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--color-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Cards */
+        .card {
+            background: rgba(45, 48, 71, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: var(--spacing-md);
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(224, 164, 88, 0.3);
+        }
+        
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            gap: var(--spacing-md);
+        }
+        
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+        
+        /* Expertise Cards */
+        .expertise-card {
+            padding: var(--spacing-md);
+            text-align: center;
+        }
+        
+        .expertise-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto var(--spacing-sm);
+            background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        
+        .expertise-card h4 {
+            margin-bottom: var(--spacing-xs);
+            color: var(--color-accent);
+        }
+        
+        .expertise-card p {
+            font-size: 1rem;
+            color: var(--color-muted);
+        }
+        
+        /* Experience Timeline */
+        .experience-item {
+            position: relative;
+            padding-left: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: -var(--spacing-lg);
+            width: 2px;
+            background: linear-gradient(180deg, var(--color-accent), transparent);
+        }
+        
+        .experience-item::after {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 8px;
+            width: 14px;
+            height: 14px;
+            background: var(--color-accent);
+            border: 3px solid var(--color-dark);
+            border-radius: 50%;
+        }
+        
+        .experience-header {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .experience-position {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-light);
+            margin-bottom: 0.25rem;
+        }
+        
+        .experience-company {
+            font-size: 1.125rem;
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+        
+        .experience-meta {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .experience-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(65, 157, 120, 0.2);
+            color: var(--color-secondary);
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .achievement-list {
+            list-style: none;
+            margin-top: var(--spacing-sm);
+        }
+        
+        .achievement-list li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            position: relative;
+            color: rgba(248, 249, 250, 0.85);
+        }
+        
+        .achievement-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+        
+        /* Project Cards */
+        .project-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-header {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .project-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(224, 164, 88, 0.2);
+            color: var(--color-accent);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .project-title {
+            font-size: 1.75rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .project-subtitle {
+            font-size: 1rem;
+            color: var(--color-muted);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .project-description {
+            margin-bottom: var(--spacing-sm);
+            color: rgba(248, 249, 250, 0.85);
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: var(--spacing-sm);
+        }
+        
+        .tech-tag {
+            padding: 0.35rem 0.875rem;
+            background: rgba(65, 157, 120, 0.15);
+            color: var(--color-secondary);
+            border: 1px solid rgba(65, 157, 120, 0.3);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        .skill-category {
+            padding: var(--spacing-md);
+        }
+        
+        .skill-category h4 {
+            font-size: 1.125rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-accent);
+        }
+        
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .skill-item {
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--color-light);
+            transition: var(--transition);
+        }
+        
+        .skill-item:hover {
+            background: rgba(224, 164, 88, 0.1);
+            border-color: var(--color-accent);
+            transform: translateY(-2px);
+        }
+        
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: var(--spacing-md);
+        }
+        
+        .stat-value {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            font-family: var(--font-display);
+        }
+        
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--color-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .contact-card {
+            padding: var(--spacing-md);
+            text-align: center;
+        }
+        
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto var(--spacing-sm);
+            background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        
+        .contact-card h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.125rem;
+        }
+        
+        .contact-link {
+            color: var(--color-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .contact-link:hover {
+            color: var(--color-accent);
+        }
+        
+        /* Footer */
+        .footer {
+            padding: var(--spacing-lg) 0 var(--spacing-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: var(--color-muted);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease both;
+        }
+        
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                gap: var(--spacing-sm);
+            }
+            
+            .hero {
+                padding: calc(var(--spacing-lg) + 60px) 0 var(--spacing-lg);
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .experience-item {
+                padding-left: var(--spacing-md);
+            }
+        }
+        
+        /* Loading State */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-size: 1.5rem;
+            color: var(--color-accent);
+        }
+        
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Selection */
+        ::selection {
+            background: var(--color-accent);
+            color: var(--color-dark);
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        // Portfolio Data (Embedded)
+        const portfolioData = {
+  "hero": {
+    "name": "Guru Murthy M",
+    "title": "Senior Full-Stack Software Engineer",
+    "tagline": "Architecting Scalable Enterprise Solutions with .NET & Modern Web Technologies",
+    "subtitle": "Transforming complex business challenges into elegant, high-performance software solutions",
+    "yearsOfExperience": 8,
+    "specialization": ["Enterprise Architecture", "Cloud-Native Applications", "Full-Stack Development"]
+  },
+  "contact": {
+    "email": "abbayi12guru@gmail.com",
+    "phone": "+91 8333004100",
+    "location": "Bengaluru, Karnataka, India",
+    "availability": "Open to opportunities"
+  },
+  "about": {
+    "introduction": "Passionate software engineer with 8+ years of experience designing and delivering enterprise-grade applications for the financial technology sector. Specialized in building scalable, cloud-native solutions that drive business value and enhance operational efficiency.",
+    "highlights": [
+      "Led architecture and development of portfolio monitoring platform serving PE/VC firms managing $10B+ in assets",
+      "Architected microservices infrastructure reducing deployment time by 60% and improving system reliability to 99.9%",
+      "Pioneered AI/ML integration for automated document processing, reducing manual data entry by 75%",
+      "Mentored development teams in modern architectural patterns and best practices",
+      "Delivered mission-critical applications with zero-downtime deployments"
+    ]
+  },
+  "expertise": {
+    "core": [
+      {
+        "area": "Backend Development",
+        "description": "Architecting robust APIs and microservices with .NET ecosystem",
+        "icon": "🚀"
+      },
+      {
+        "area": "Frontend Engineering",
+        "description": "Building responsive, accessible web applications with modern frameworks",
+        "icon": "💻"
+      },
+      {
+        "area": "Cloud Architecture",
+        "description": "Designing and deploying scalable solutions on AWS infrastructure",
+        "icon": "☁️"
+      },
+      {
+        "area": "Database Design",
+        "description": "Optimizing data models for performance and scalability",
+        "icon": "🗄️"
+      },
+      {
+        "area": "DevOps & CI/CD",
+        "description": "Streamlining deployment pipelines and automating workflows",
+        "icon": "⚙️"
+      },
+      {
+        "area": "Technical Leadership",
+        "description": "Guiding teams through complex technical challenges and architectural decisions",
+        "icon": "👥"
+      }
+    ]
+  },
+  "technicalSkills": {
+    "backend": {
+      "category": "Backend & APIs",
+      "items": [".NET 8", ".NET Core", "ASP.NET Core", "Entity Framework", "Dapper", "RESTful APIs", "Microservices", "Web Services", "WCF"]
+    },
+    "frontend": {
+      "category": "Frontend Technologies",
+      "items": ["React", "Angular 9+", "TypeScript", "HTML5", "CSS3", "Bootstrap", "Tailwind CSS", "jQuery"]
+    },
+    "database": {
+      "category": "Database Systems",
+      "items": ["PostgreSQL", "MS SQL Server", "MongoDB", "Database Design", "Query Optimization"]
+    },
+    "cloud": {
+      "category": "Cloud & DevOps",
+      "items": ["AWS", "Docker", "CI/CD Pipelines", "AWS CodePipeline", "AWS CodeBuild", "IIS", "Git"]
+    },
+    "tools": {
+      "category": "Development Tools",
+      "items": ["Visual Studio", "VS Code", "Agile/Scrum", "SonarQube", "Snyk", "OWASP ZAP", "Unit Testing"]
+    }
+  },
+  "experience": [
+    {
+      "id": "exp-001",
+      "company": "Acuity Knowledge Partners",
+      "position": "Senior Software Engineer",
+      "location": "Bengaluru, India",
+      "period": { "start": "April 2021", "end": "Present", "duration": "4+ years" },
+      "summary": "Leading development of enterprise portfolio monitoring solutions for private equity and venture capital firms, architecting scalable cloud-native applications that process billions in financial data.",
+      "keyAchievements": [
+        "Architected and delivered FolioSure, a comprehensive portfolio monitoring platform processing real-time financial data for PE/VC funds managing $10B+ in assets",
+        "Engineered AI-powered document digitization system using OCR and NLP, reducing manual data processing time by 75% and improving accuracy to 98%+",
+        "Designed and implemented microservices architecture supporting 10,000+ concurrent users with 99.9% uptime",
+        "Led migration from monolithic architecture to cloud-native microservices, reducing deployment time from hours to minutes",
+        "Established CI/CD pipelines and automated testing frameworks, improving code quality and deployment reliability"
+      ],
+      "technologies": [".NET 8", "React", "Angular", "PostgreSQL", "AWS", "Microservices", "Docker", "CI/CD"]
+    },
+    {
+      "id": "exp-002",
+      "company": "Miramed Global (Ajuba Solutions)",
+      "position": "Software Engineer",
+      "location": "India",
+      "period": { "start": "May 2019", "end": "April 2021", "duration": "2 years" },
+      "summary": "Developed healthcare management systems and internal productivity tools, focusing on creating intuitive user experiences and robust backend systems.",
+      "keyAchievements": [
+        "Built comprehensive project management and ticketing system handling 5,000+ tickets monthly across multiple teams",
+        "Developed asset requisition platform streamlining procurement workflows for 500+ employees",
+        "Implemented real-time notification system improving team response time by 40%",
+        "Created reusable component library adopted across 5+ internal projects, reducing development time by 30%"
+      ],
+      "technologies": [".NET Core", "Angular 9", "PostgreSQL", "Bootstrap", "REST APIs"]
+    },
+    {
+      "id": "exp-003",
+      "company": "CMOTS Internet Technologies",
+      "position": "Software Developer",
+      "location": "Chennai, India",
+      "period": { "start": "April 2017", "end": "May 2019", "duration": "2 years" },
+      "summary": "Contributed to development of subscription management and lead tracking systems, gaining foundational experience in full-stack development and database design.",
+      "keyAchievements": [
+        "Developed lead management system processing 10,000+ leads monthly with automated distribution and tracking",
+        "Designed database schemas and optimized queries, improving application performance by 45%",
+        "Implemented automated reporting features generating 20+ custom reports for management insights"
+      ],
+      "technologies": [".NET Framework 4.0", "ASP.NET", "SQL Server", "JavaScript", "jQuery"]
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-001",
+      "title": "FolioSure",
+      "subtitle": "Enterprise Portfolio Intelligence Platform",
+      "category": "FinTech",
+      "overview": "A comprehensive portfolio monitoring and analytics platform serving private equity and venture capital firms. The system aggregates financial data from diverse sources, applies advanced analytics, and generates actionable insights for investment decision-making.",
+      "myRole": "Technical Lead & Senior Developer",
+      "keyFeatures": [
+        { "feature": "Intelligent Data Aggregation", "description": "Unified data pipeline ingesting financial and operational data from 50+ sources" },
+        { "feature": "AI-Powered Document Processing", "description": "OCR and NLP-based extraction system with 98% accuracy" },
+        { "feature": "Dynamic KPI Engine", "description": "Flexible calculation framework for custom metrics" },
+        { "feature": "Advanced Analytics Suite", "description": "Interactive dashboards with real-time charts and trend analysis" }
+      ],
+      "impact": [
+        { "label": "Data Processing Time", "value": "75% reduction" },
+        { "label": "Platform Uptime", "value": "99.9%" },
+        { "label": "User Adoption", "value": "500+ users" }
+      ],
+      "technologies": [".NET 8", "React", "Angular", "PostgreSQL", "AWS", "Docker", "Microservices", "OpenAI"]
+    },
+    {
+      "id": "proj-002",
+      "title": "Help Desk 2.0",
+      "subtitle": "Intelligent Project & Ticket Management System",
+      "category": "Productivity",
+      "overview": "An advanced help desk and project management platform combining ticket tracking, project management, and team collaboration features.",
+      "myRole": "Full-Stack Developer & System Architect",
+      "keyFeatures": [
+        { "feature": "Intelligent Ticket Management", "description": "Automated ticket lifecycle with smart routing and SLA tracking" },
+        { "feature": "Project Transformation", "description": "One-click conversion of feature requests into tracked projects" },
+        { "feature": "Real-Time Collaboration", "description": "Live updates and instant notifications" }
+      ],
+      "impact": [
+        { "label": "Ticket Processing", "value": "5,000+ tickets/month" },
+        { "label": "Response Time", "value": "40% improvement" }
+      ],
+      "technologies": [".NET Core", "Angular 9", "PostgreSQL", "SignalR", "Bootstrap"]
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Enterprise Platform Architecture",
+      "description": "Architected portfolio monitoring platform serving 20+ PE/VC firms managing $10B+ in assets",
+      "impact": "Platform processes 100K+ financial transactions daily with 99.9% uptime"
+    },
+    {
+      "title": "AI Integration Pioneer",
+      "description": "Successfully integrated AI/ML capabilities for automated document processing",
+      "impact": "Reduced manual data entry by 75%, saving 1,000+ hours monthly"
+    },
+    {
+      "title": "Performance Optimization",
+      "description": "Led database optimization initiative improving query performance by 10x",
+      "impact": "Reduced average API response time from 2s to 200ms"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Engineering",
+      "field": "Electrical and Electronics Engineering",
+      "institution": "Siddartha Institute of Science and Technology",
+      "location": "Andhra Pradesh, India",
+      "period": { "start": "2012", "end": "2016" },
+      "grade": "First Class with 71%"
+    }
+  ]
+};
+
+        // Navigation Component
+        const Navigation = ({ activeSection, setActiveSection }) => {
+            const [scrolled, setScrolled] = useState(false);
+
+            useEffect(() => {
+                const handleScroll = () => {
+                    setScrolled(window.scrollY > 50);
+                };
+                window.addEventListener('scroll', handleScroll);
+                return () => window.removeEventListener('scroll', handleScroll);
+            }, []);
+
+            const sections = ['About', 'Experience', 'Projects', 'Skills', 'Contact'];
+
+            return (
+                <nav className="nav" style={{ background: scrolled ? 'rgba(26, 27, 38, 0.98)' : 'rgba(26, 27, 38, 0.95)' }}>
+                    <div className="container">
+                        <div className="nav-content">
+                            <a href="#home" className="nav-logo">GM</a>
+                            <ul className="nav-menu">
+                                {sections.map(section => (
+                                    <li key={section}>
+                                        <a 
+                                            href={`#${section.toLowerCase()}`}
+                                            className={`nav-link ${activeSection === section.toLowerCase() ? 'active' : ''}`}
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                setActiveSection(section.toLowerCase());
+                                                document.getElementById(section.toLowerCase())?.scrollIntoView({ behavior: 'smooth' });
+                                            }}
+                                        >
+                                            {section}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            );
+        };
+
+        // Hero Component
+        const Hero = () => {
+            return (
+                <section id="home" className="hero">
+                    <div className="container">
+                        <div className="hero-content">
+                            <span className="hero-label">{portfolioData.hero.yearsOfExperience}+ Years of Excellence</span>
+                            <h1 className="hero-title">{portfolioData.hero.name}</h1>
+                            <h2 className="hero-subtitle">{portfolioData.hero.title}</h2>
+                            <p className="hero-description">{portfolioData.hero.subtitle}</p>
+                            <div className="hero-cta">
+                                <a href="#projects" className="btn btn-primary">View My Work</a>
+                                <a href="#contact" className="btn btn-secondary">Get In Touch</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+
+        // About Component
+        const About = () => {
+            return (
+                <section id="about" className="section">
+                    <div className="container">
+                        <div className="section-header">
+                            <span className="section-label">Introduction</span>
+                            <h2 className="section-title">About Me</h2>
+                        </div>
+                        
+                        <div style={{ maxWidth: '800px', margin: '0 auto var(--spacing-lg)' }}>
+                            <p style={{ fontSize: '1.25rem', lineHeight: '1.8', textAlign: 'center' }}>
+                                {portfolioData.about.introduction}
+                            </p>
+                        </div>
+
+                        <div className="grid grid-3">
+                            {portfolioData.expertise.core.map((item, index) => (
+                                <div key={index} className="card expertise-card reveal">
+                                    <div className="expertise-icon">{item.icon}</div>
+                                    <h4>{item.area}</h4>
+                                    <p>{item.description}</p>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="stats-grid" style={{ marginTop: 'var(--spacing-lg)' }}>
+                            <div className="stat-card">
+                                <div className="stat-value">8+</div>
+                                <div className="stat-label">Years Experience</div>
+                            </div>
+                            <div className="stat-card">
+                                <div className="stat-value">20+</div>
+                                <div className="stat-label">Projects Delivered</div>
+                            </div>
+                            <div className="stat-card">
+                                <div className="stat-value">$10B+</div>
+                                <div className="stat-label">Assets Managed</div>
+                            </div>
+                            <div className="stat-card">
+                                <div className="stat-value">99.9%</div>
+                                <div className="stat-label">Uptime</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+
+        // Experience Component
+        const Experience = () => {
+            return (
+                <section id="experience" className="section" style={{ background: 'rgba(45, 48, 71, 0.2)' }}>
+                    <div className="container">
+                        <div className="section-header">
+                            <span className="section-label">Career Journey</span>
+                            <h2 className="section-title">Professional Experience</h2>
+                        </div>
+
+                        {portfolioData.experience.map((exp, index) => (
+                            <div key={exp.id} className="experience-item reveal" style={{ animationDelay: `${index * 0.2}s` }}>
+                                <div className="experience-header">
+                                    <h3 className="experience-position">{exp.position}</h3>
+                                    <div className="experience-company">{exp.company}</div>
+                                    <div className="experience-meta">
+                                        <span className="experience-badge">{exp.period.duration}</span>
+                                        <span className="experience-badge">{exp.location}</span>
+                                    </div>
+                                </div>
+                                
+                                <p style={{ marginBottom: 'var(--spacing-sm)', color: 'rgba(248, 249, 250, 0.85)' }}>
+                                    {exp.summary}
+                                </p>
+
+                                <ul className="achievement-list">
+                                    {exp.keyAchievements.map((achievement, idx) => (
+                                        <li key={idx}>{achievement}</li>
+                                    ))}
+                                </ul>
+
+                                <div className="tech-stack">
+                                    {exp.technologies.map((tech, idx) => (
+                                        <span key={idx} className="tech-tag">{tech}</span>
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            );
+        };
+
+        // Projects Component
+        const Projects = () => {
+            return (
+                <section id="projects" className="section">
+                    <div className="container">
+                        <div className="section-header">
+                            <span className="section-label">Portfolio</span>
+                            <h2 className="section-title">Featured Projects</h2>
+                            <p className="section-subtitle">
+                                A selection of impactful projects demonstrating technical excellence and business value
+                            </p>
+                        </div>
+
+                        <div className="grid grid-2">
+                            {portfolioData.projects.map((project, index) => (
+                                <div key={project.id} className="card project-card reveal" style={{ animationDelay: `${index * 0.2}s` }}>
+                                    <div className="project-header">
+                                        <span className="project-category">{project.category}</span>
+                                        <h3 className="project-title">{project.title}</h3>
+                                        <p className="project-subtitle">{project.subtitle}</p>
+                                    </div>
+
+                                    <p className="project-description">{project.overview}</p>
+
+                                    <div style={{ marginTop: 'var(--spacing-sm)' }}>
+                                        <h4 style={{ fontSize: '1rem', marginBottom: '0.75rem', color: 'var(--color-accent)' }}>
+                                            Key Features
+                                        </h4>
+                                        <ul style={{ listStyle: 'none', paddingLeft: 0 }}>
+                                            {project.keyFeatures.slice(0, 3).map((feature, idx) => (
+                                                <li key={idx} style={{ marginBottom: '0.5rem', paddingLeft: '1.5rem', position: 'relative', fontSize: '0.95rem' }}>
+                                                    <span style={{ position: 'absolute', left: 0, color: 'var(--color-accent)' }}>✓</span>
+                                                    <strong>{feature.feature}:</strong> {feature.description}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+
+                                    {project.impact && (
+                                        <div style={{ marginTop: 'var(--spacing-sm)', padding: 'var(--spacing-sm)', background: 'rgba(224, 164, 88, 0.1)', borderRadius: '8px' }}>
+                                            <h4 style={{ fontSize: '0.875rem', marginBottom: '0.5rem', color: 'var(--color-accent)' }}>Impact</h4>
+                                            <div style={{ display: 'flex', gap: 'var(--spacing-sm)', flexWrap: 'wrap' }}>
+                                                {project.impact.map((stat, idx) => (
+                                                    <div key={idx} style={{ fontSize: '0.85rem' }}>
+                                                        <strong style={{ color: 'var(--color-accent)' }}>{stat.value}</strong>
+                                                        <span style={{ color: 'var(--color-muted)', marginLeft: '0.25rem' }}>{stat.label}</span>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    <div className="tech-stack">
+                                        {project.technologies.slice(0, 6).map((tech, idx) => (
+                                            <span key={idx} className="tech-tag">{tech}</span>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+
+        // Skills Component
+        const Skills = () => {
+            return (
+                <section id="skills" className="section" style={{ background: 'rgba(45, 48, 71, 0.2)' }}>
+                    <div className="container">
+                        <div className="section-header">
+                            <span className="section-label">Technologies</span>
+                            <h2 className="section-title">Technical Skills</h2>
+                        </div>
+
+                        <div className="skills-grid">
+                            {Object.values(portfolioData.technicalSkills).map((category, index) => (
+                                <div key={index} className="card skill-category reveal" style={{ animationDelay: `${index * 0.1}s` }}>
+                                    <h4>{category.category}</h4>
+                                    <div className="skill-items">
+                                        {category.items.map((skill, idx) => (
+                                            <span key={idx} className="skill-item">{skill}</span>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div style={{ marginTop: 'var(--spacing-lg)', textAlign: 'center' }}>
+                            <h3 style={{ marginBottom: 'var(--spacing-md)', color: 'var(--color-accent)' }}>Key Achievements</h3>
+                            <div className="grid grid-3">
+                                {portfolioData.achievements.map((achievement, index) => (
+                                    <div key={index} className="card reveal" style={{ animationDelay: `${index * 0.15}s`, padding: 'var(--spacing-md)' }}>
+                                        <h4 style={{ marginBottom: 'var(--spacing-xs)', color: 'var(--color-light)' }}>
+                                            {achievement.title}
+                                        </h4>
+                                        <p style={{ fontSize: '0.95rem', marginBottom: 'var(--spacing-xs)' }}>
+                                            {achievement.description}
+                                        </p>
+                                        <p style={{ fontSize: '0.875rem', color: 'var(--color-secondary)', fontWeight: '600' }}>
+                                            {achievement.impact}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+
+        // Contact Component
+        const Contact = () => {
+            return (
+                <section id="contact" className="section">
+                    <div className="container">
+                        <div className="section-header">
+                            <span className="section-label">Get In Touch</span>
+                            <h2 className="section-title">Let's Work Together</h2>
+                            <p className="section-subtitle">
+                                I'm always interested in hearing about new opportunities and collaborations
+                            </p>
+                        </div>
+
+                        <div className="contact-grid">
+                            <div className="card contact-card reveal">
+                                <div className="contact-icon">📧</div>
+                                <h4>Email</h4>
+                                <a href={`mailto:${portfolioData.contact.email}`} className="contact-link">
+                                    {portfolioData.contact.email}
+                                </a>
+                            </div>
+                            
+                            <div className="card contact-card reveal" style={{ animationDelay: '0.1s' }}>
+                                <div className="contact-icon">📱</div>
+                                <h4>Phone</h4>
+                                <a href={`tel:${portfolioData.contact.phone}`} className="contact-link">
+                                    {portfolioData.contact.phone}
+                                </a>
+                            </div>
+                            
+                            <div className="card contact-card reveal" style={{ animationDelay: '0.2s' }}>
+                                <div className="contact-icon">📍</div>
+                                <h4>Location</h4>
+                                <p style={{ margin: 0, color: 'var(--color-muted)' }}>{portfolioData.contact.location}</p>
+                            </div>
+                        </div>
+
+                        <div style={{ marginTop: 'var(--spacing-lg)', textAlign: 'center' }}>
+                            <div className="card" style={{ display: 'inline-block', padding: 'var(--spacing-md) var(--spacing-lg)' }}>
+                                <h4 style={{ marginBottom: 'var(--spacing-sm)' }}>Education</h4>
+                                {portfolioData.education.map((edu, index) => (
+                                    <div key={index}>
+                                        <p style={{ fontSize: '1.125rem', fontWeight: '600', marginBottom: '0.25rem' }}>
+                                            {edu.degree} in {edu.field}
+                                        </p>
+                                        <p style={{ color: 'var(--color-secondary)', marginBottom: '0.25rem' }}>
+                                            {edu.institution}
+                                        </p>
+                                        <p style={{ fontSize: '0.95rem', color: 'var(--color-muted)' }}>
+                                            {edu.period.start} - {edu.period.end} | {edu.grade}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+
+        // Footer Component
+        const Footer = () => {
+            return (
+                <footer className="footer">
+                    <div className="container">
+                        <p style={{ marginBottom: 'var(--spacing-sm)' }}>
+                            © 2026 {portfolioData.hero.name}. All rights reserved.
+                        </p>
+                        <p style={{ fontSize: '0.875rem' }}>
+                            Built with React | Designed for Impact
+                        </p>
+                    </div>
+                </footer>
+            );
+        };
+
+        // Main App Component
+        function App() {
+            const [activeSection, setActiveSection] = useState('about');
+
+            useEffect(() => {
+                // Scroll reveal animation
+                const revealElements = document.querySelectorAll('.reveal');
+                
+                const revealOnScroll = () => {
+                    revealElements.forEach(element => {
+                        const elementTop = element.getBoundingClientRect().top;
+                        const windowHeight = window.innerHeight;
+                        
+                        if (elementTop < windowHeight - 100) {
+                            element.classList.add('active');
+                        }
+                    });
+                };
+
+                window.addEventListener('scroll', revealOnScroll);
+                revealOnScroll(); // Initial check
+
+                return () => window.removeEventListener('scroll', revealOnScroll);
+            }, []);
+
+            return (
+                <>
+                    <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
+                    <Hero />
+                    <About />
+                    <Experience />
+                    <Projects />
+                    <Skills />
+                    <Contact />
+                    <Footer />
+                </>
+            );
+        }
+
+        // Render the app
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
